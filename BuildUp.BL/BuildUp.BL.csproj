@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BuildUp.DAL\BuildUp.DAL.csproj" />
+    <ProjectReference Include="..\BuildUp.Entities\BuildUp.Entities.csproj" />
   </ItemGroup>
 
 </Project>
