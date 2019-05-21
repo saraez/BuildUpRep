@@ -23,6 +23,7 @@ namespace BuildUp.Web
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddTransient<ITaskManager, TaskManager>();
+            ConfigurationManager.ConfigureBLServices(services);
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

@@ -5,7 +5,19 @@ using System.Text;
 
 namespace BuildUp.DAL.Accessor
 {
-    class TaskAccessor : ITaskAccessor
+    public class TaskAccessor : ITaskAccessor
     {
+        private readonly taskContext _Context;
+        public TaskAccessor(taskContext context)
+        {
+            _Context = context;
+        }
+
+        public void Test()
+        {
+            _Context.Worker.Add(new Worker() { WorkerName = "test name 2"});
+            _Context.SaveChanges();
+                }
+
     }
 }

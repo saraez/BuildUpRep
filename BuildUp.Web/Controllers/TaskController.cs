@@ -19,9 +19,12 @@ namespace BuildUp.Web.Controllers
             _TaskManager = taskManager;
         }
         // GET: api/Task
+     
+
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            _TaskManager.Test();
             return new string[] { "value1", "value2" };
         }
 

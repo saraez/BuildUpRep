@@ -1,12 +1,19 @@
-﻿using System;
+﻿using BuildUp.DAL.Interface;
+using System;
 
 namespace BuildUp.BL
 {
     public class TaskManager : ITaskManager
     {
-        public TaskManager()
-        {
+        private readonly ITaskAccessor _TaskAccessor;
 
+        public TaskManager(ITaskAccessor taskAccessor)
+        {
+            _TaskAccessor = taskAccessor;
+        }
+        public void Test()
+        {
+            _TaskAccessor.Test();
         }
     }
 }

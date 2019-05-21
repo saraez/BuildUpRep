@@ -1,6 +1,7 @@
 ﻿namespace BuildUp.DAL.Interface
 {
-    internal interface ITaskAccessor
+    public interface ITaskAccessor
     {
+        void Test();
     }
 }
