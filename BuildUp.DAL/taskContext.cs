@@ -28,7 +28,7 @@ namespace BuildUp.DAL
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseMySql("server=buildupdb.ciibyhqzli7d.us-east-2.rds.amazonaws.com;port=3306;uid=BuildUp;pwd=sarae888!;connect timeout=200;MinimumPoolSize=20;maximumpoolsize=500;SslMode=None;database=task");
+                optionsBuilder.UseMySql("server=buildupdb.ciibyhqzli7d.us-east-2.rds.amazonaws.com;port=3306;uid=BuildUp;pwd=sarae888!;connect timeout=700;MinimumPoolSize=20;maximumpoolsize=500;SslMode=None;database=task");
             }
         }
 
@@ -101,6 +101,10 @@ namespace BuildUp.DAL
 
             modelBuilder.Entity<Worker>(entity =>
             {
+                entity.HasIndex(e => e.WorkerId)
+                    .HasName("WorkerId_UNIQUE")
+                    .IsUnique();
+
                 entity.Property(e => e.WorkerId).HasColumnType("int(11)");
 
                 entity.Property(e => e.WorkerName)
