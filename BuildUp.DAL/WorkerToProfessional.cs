@@ -9,5 +9,8 @@ namespace BuildUp.DAL
         public int WorkerId { get; set; }
         public int ProfessionalId { get; set; }
         public sbyte? IsMainProfessional { get; set; }
+
+        public virtual Professional Professional { get; set; }
+        public virtual Worker Worker { get; set; }
     }
 }

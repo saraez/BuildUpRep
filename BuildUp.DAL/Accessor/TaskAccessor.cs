@@ -15,7 +15,7 @@ namespace BuildUp.DAL.Accessor
 
         public void Test()
         {
-            _Context.Worker.Add(new Worker() { WorkerName = "test name 2"});
+            _Context.Worker.Add(new Worker() { WorkerName = "test name 5", IdentificationId = "3333", Nickname= "בדיקה", PhoneNumber="2222"});
             _Context.SaveChanges();
                 }
 
