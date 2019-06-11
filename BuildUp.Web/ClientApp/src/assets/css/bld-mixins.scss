@@ -33,7 +33,7 @@ $desktop-width: 1024px;
 
 @mixin list-design {
     display: grid;
-    grid-gap: 1em;
+    grid-gap: 1.5em;
 
     @include mobile {
         grid-template-columns: 1fr;
