@@ -1,0 +1,41 @@
+// =============================================================================
+// Media Queries
+// =============================================================================
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+    @media (max-width: #{$tablet-width - 1px}) {
+      @content;
+    }
+  }
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+// =============================================================================
+
+@mixin bld-modal-container {
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 5px;
+}
+
+@mixin list-design {
+    display: grid;
+    grid-gap: 1em;
+
+    @include mobile {
+        grid-template-columns: 1fr;
+    }
+}

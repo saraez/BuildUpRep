@@ -1,0 +1,40 @@
+form {
+    margin-bottom: 1em;
+}
+
+
+
+.worker-card {
+    background: #fff;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    padding: 1em;
+    border-radius: 4px;
+    
+    .worker-img, .worker-name {
+        display: inline-block;
+    }
+}
+
+.worker-row {
+    border-bottom: 1px solid #ccc;
+    padding: 0.5em;
+    display: flex;
+}
+
+.worker-img {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background-image: url(https://material.angular.io/assets/img/examples/shiba1.jpg);
+    background-size: cover;
+    margin: 0 1em;
+}
+
+.worker-name div {
+    color: rgba(0,0,0,.54);
+    line-height: initial;
+    &:first-child {
+        font-size: 1.2em;
+        color: #000;
+    }
+}

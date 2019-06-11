@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>איתור עובדים</h2>
+  <form>
+    <div class="form-row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="חיפוש חופשי" (keyup)="dv.filter($event.target.value)">
+      </div>
+    </div>
+  </form>
+
+  <p-dataView #dv [value]="workers" [paginator]="true" [rows]="10" filterBy="firstName,lastName">
+    <p-header>
+      <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+    </p-header>
+    <ng-template let-worker pTemplate="listItem">
+      <div class="worker-card">
+        <div class="worker-img" [style.backgroundImage]="'url(./assets/imgs/'+worker.imgUrl+')'"></div>
+        <div class="worker-name">
+          <div>{{worker.firstName}} {{worker.lastName}}</div>
+          <div>{{worker.nickName}}</div>
+          <div>{{worker.phone}}</div>
+        </div>
+        <div>
+          
+        </div>
+      </div>
+    </ng-template>
+    <ng-template let-worker pTemplate="gridItem">
+      <div class="worker-row">
+        <div class="worker-img" [style.backgroundImage]="'url(./assets/imgs/'+worker.imgUrl+')'"></div>
+        <div class="worker-name">
+          <div>{{worker.firstName}} {{worker.lastName}}</div>
+          <div>{{worker.nickName}}</div>
+          <div>{{worker.phone}}</div>
+        </div>
+      </div>
+    </ng-template>
+  </p-dataView>
+</div>
