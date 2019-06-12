@@ -1,0 +1,30 @@
+<p-dataView #dv [value]="workers" [paginator]="true" [rows]="10" filterBy="firstName,lastName">
+  <p-header>
+    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+  </p-header>
+  <ng-template let-worker pTemplate="gridItem">
+    <div class="worker-card" (click)="openDialog(worker)">
+      <div class="worker-img" [style.backgroundImage]="'url(./assets/imgs/'+worker.imgUrl+')'"></div>
+      <div class="worker-name">
+        <div>{{worker.firstName}} {{worker.lastName}}</div>
+        <div>{{worker.nickName}}</div>
+        <div>{{worker.phone}}</div>
+      </div>
+      <div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template let-worker pTemplate="listItem">
+    <div class="worker-row" (click)="openDialog(worker)">
+      <div class="worker-img" [style.backgroundImage]="'url(./assets/imgs/'+worker.imgUrl+')'"></div>
+      <div class="worker-name">
+        <div>{{worker.firstName}} {{worker.lastName}}</div>
+        <div>{{worker.nickName}}</div>
+        <div>{{worker.phone}}</div>
+      </div>
+      <button class="btn btn-default">
+        <i class="far fa-edit"></i>
+      </button>
+    </div>
+  </ng-template>
+</p-dataView>

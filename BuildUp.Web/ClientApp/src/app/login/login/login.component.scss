@@ -14,9 +14,11 @@
 .login-form {
     @include bld-modal-container;
     position: relative;
-    direction: $bld-direction-opposite;
-    text-align: $bld-align-opposite;
     margin: 0 1em;
+    @include tablet-up {
+        margin: 0 auto;
+        max-width: 50%;
+    }
 
     .login-header {
         transform: translateY(-50%);

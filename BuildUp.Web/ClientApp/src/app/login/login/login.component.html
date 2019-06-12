@@ -4,20 +4,20 @@
       <div class="login-header">
         <i class="fas fa-user"></i>
       </div>
-      <h2>Member Login</h2>
+      <h2>שלום, מי אתה?</h2>
       <form [formGroup]="loginForm">
         <mat-form-field>
-          <mat-label>Enter Your Email</mat-label>
+          <mat-label>יש להזין כאן את כתובת האימייל שלך</mat-label>
           <input matInput formControlName="email" type="email">
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label>Enter Your password</mat-label>
+          <mat-label>יש להזין כאן את הסיסמה שבחרת</mat-label>
           <input matInput formControlName="password" type="password" />
         </mat-form-field>
 
         <div class="form-group">
-          <button type="submit" class="btn btn-primary btn-block btn-md" (click)="signIn()">Sign In</button>
+          <button type="submit" class="btn btn-primary btn-block" (click)="signIn()">היכנס</button>
         </div>
 
       </form>

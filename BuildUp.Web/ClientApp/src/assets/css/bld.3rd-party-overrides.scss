@@ -1,0 +1,46 @@
+.ui-dataview-content {
+    padding: 0 !important;
+}
+
+.ui-dataview-grid .ui-g {
+    @include list-design;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1em;
+    
+}
+.ui-dataview-list .ui-g {
+    @include list-design;
+    grid-template-columns: 1fr;
+    grid-gap: 0.5em;
+}
+
+// ==================================================================
+
+.ui-dialog {
+    @include bld-modal-container;
+    width: 70%;
+    @include mobile {
+        width: 90%;
+    }
+}
+.ui-widget-overlay {
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+.ui-dialog .ui-dialog-titlebar, .ui-dialog .ui-dialog-content {
+    border: none !important;
+    border-radius: 5px;
+}
+.ui-dialog .ui-dialog-titlebar .ui-dialog-title {
+    font-family: $bld-font-family-bold;
+    font-size: 1.5em;
+}
+.ui-dialog .ui-dialog-titlebar-icon {
+    float: $bld-align-opposite;
+    margin-left: 0 !important;
+}
+
+// ==================================================================
+
+.mat-form-field {
+    text-align: $bld-align !important;
+}

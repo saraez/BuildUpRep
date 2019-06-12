@@ -7,15 +7,29 @@
     url('~/assets/fonts/opensanshebrew-bold-webfont.svg#alefregular') format('svg');
 }
 
+@font-face {
+    font-family: "opensanshebrew-light";
+    src: url('~/assets/fonts/OpenSansHebrew-Light.woff');
+}
+
+@font-face {
+    font-family: "opensanshebrew";
+    src: url('~/assets/fonts/OpenSansHebrew-Regular.woff');
+}
+
 * {
     font-family: $bld-font-family;
-    
 }
 
 body {
     direction: $bld-direction;
     text-align: $bld-align;
 }
+
+h1, h2, h3 {
+    font-family: $bld-font-family-bold;
+}
+// ==================================================================
 
 .bld-body-container {
     min-height: 100vh;
@@ -35,20 +49,4 @@ body {
 }
 
 // ==================================================================
-
-.ui-dataview-content {
-    padding: 0 !important;
-}
-
-.ui-dataview-list .ui-g {
-    @include list-design;
-    grid-template-columns: repeat(4, 1fr);
-    padding: 1em;
-    
-}
-.ui-dataview-grid .ui-g {
-    @include list-design;
-    grid-template-columns: 1fr;
-    grid-gap: 0.5em;
-}
 

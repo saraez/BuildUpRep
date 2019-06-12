@@ -5,28 +5,22 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
-import { LoginModule } from './login/login.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavMenuComponent,
-    HomeComponent,
-    FetchDataComponent
+    NavMenuComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }), 
+    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     BrowserAnimationsModule,
-    HttpClientModule,
     RouterModule.forRoot([
-      { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'fetch-data', component: FetchDataComponent },
-      { path: "admin", loadChildren : () => import('./admin/admin.module').then(m => m.AdminModule)}
-    ]),
-    LoginModule
+      { path: '', pathMatch: 'full', redirectTo: "login" },
+      { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
+      { path: "admin", loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
+      { path: "**", redirectTo: "login" }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
