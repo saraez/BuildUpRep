@@ -20,19 +20,20 @@ export class LoginComponent implements OnInit {
 
   signIn() {
     this.isLoginFaild = false;
-    const userName = this.loginForm.controls.email.value;
-    const password = this.loginForm.controls.password.value;
-    this._loginService.login(userName, password).then(isLogin => {
-      if (isLogin) {
-        if (this._loginService.currentUser.memberType == MemberType.Admin)
-          this._router.navigate(["/admin"]);
-        if (this._loginService.currentUser.memberType == MemberType.Worker)
-          this._router.navigate(["/worker"]);
-      }
-      else 
-        this.isLoginFaild = true;
-
-    })
+    if (this.loginForm.valid) {
+      const userName = this.loginForm.controls.email.value;
+      const password = this.loginForm.controls.password.value;
+      this._loginService.login(userName, password).then(isLogin => {
+        if (isLogin) {
+          if (this._loginService.currentUser.memberType == MemberType.Admin)
+            this._router.navigate(["/admin"]);
+          if (this._loginService.currentUser.memberType == MemberType.Worker)
+            this._router.navigate(["/worker"]);
+        }
+        else
+          this.isLoginFaild = true;
+      })
+    }
   }
 
   constructor(private _router: Router, private _loginService: LoginService) { }
