@@ -6,6 +6,7 @@
       </div>
       <h2>שלום, מי אתה?</h2>
       <form [formGroup]="loginForm">
+        <div [hidden]="!isLoginFaild" class="alert alert-danger">מצטערים, לא הצלחנו לזהות אותך</div>
         <mat-form-field>
           <mat-label>יש להזין כאן את כתובת האימייל שלך</mat-label>
           <input matInput formControlName="email" type="email">

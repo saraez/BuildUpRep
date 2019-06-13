@@ -1,7 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from './login.service';
+import { MemberType } from 'src/app/shared/models/member-type.enum';
 
 @Component({
   selector: 'bld-login',
@@ -10,15 +11,28 @@ import { LoginService } from './login.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginComponent implements OnInit {
+  isLoginFaild: boolean = false;
 
   loginForm: FormGroup = new FormGroup({
-    email: new FormControl(""),
-    password: new FormControl("")
+    email: new FormControl("", [Validators.required]),
+    password: new FormControl("", [Validators.required])
   });
 
   signIn() {
-    if(this._loginService.login())
-      this._router.navigate(["/admin"]);
+    this.isLoginFaild = false;
+    const userName = this.loginForm.controls.email.value;
+    const password = this.loginForm.controls.password.value;
+    this._loginService.login(userName, password).then(isLogin => {
+      if (isLogin) {
+        if (this._loginService.currentUser.memberType == MemberType.Admin)
+          this._router.navigate(["/admin"]);
+        if (this._loginService.currentUser.memberType == MemberType.Worker)
+          this._router.navigate(["/worker"]);
+      }
+      else 
+        this.isLoginFaild = true;
+
+    })
   }
 
   constructor(private _router: Router, private _loginService: LoginService) { }

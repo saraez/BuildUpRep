@@ -14,7 +14,7 @@ export class WorkerDetailsComponent implements OnInit {
     worker: Worker = this.config.data;
 
     ngOnInit() {
-        
+        //
     }
 
     close(worker: Worker) {
