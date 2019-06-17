@@ -10,11 +10,11 @@ export class WorkersManagerService {
         { id: 1, userId: 2,  firstName: "אחמד", lastName: "בן סעיד", nickName: "מכנים אותי שמואל", imgUrl: "images111.jpg", phone: "057-6543212" },
         { id: 2, userId: 3, firstName: "אבו עלא", lastName: "בן סעיד", nickName: "מכנים אותי דוד", imgUrl: "imgs222.jpg", phone: "057-6543212" },
         { id: 3, userId: 4, firstName: "נאסר", lastName: "בן סעיד", nickName: "מכנים אותי ישראל", imgUrl: "imgs333.jpg", phone: "057-6543212" },
-        { id: 4, userId: 5, firstName: "מחמוד", lastName: "בן סעיד", nickName: "מכנים אותי יעקב", imgUrl: "images111.jpg", phone: "057-6543212" },
-        { id: 5, userId: 6, firstName: "אחמד", lastName: "בן סעיד", nickName: "מכנים אותי שמואל", imgUrl: "imgs222.jpg", phone: "057-6543212" },
-        { id: 6, userId: 7, firstName: "אבו עלא", lastName: "בן סעיד", nickName: "מכנים אותי דוד", imgUrl: "imgs333.jpg", phone: "057-6543212" },
-        { id: 7, userId: 8, firstName: "נאסר", lastName: "בן סעיד", nickName: "מכנים אותי ישראל", imgUrl: "images111.jpg", phone: "057-6543212" },
-        { id: 8, userId: 9, firstName: "מחמוד", lastName: "בן סעיד", nickName: "מכנים אותי יעקב", imgUrl: "imgs222.jpg", phone: "057-6543212" },
+        // { id: 4, userId: 5, firstName: "מחמוד", lastName: "בן סעיד", nickName: "מכנים אותי יעקב", imgUrl: "images111.jpg", phone: "057-6543212" },
+        // { id: 5, userId: 6, firstName: "אחמד", lastName: "בן סעיד", nickName: "מכנים אותי שמואל", imgUrl: "imgs222.jpg", phone: "057-6543212" },
+        // { id: 6, userId: 7, firstName: "אבו עלא", lastName: "בן סעיד", nickName: "מכנים אותי דוד", imgUrl: "imgs333.jpg", phone: "057-6543212" },
+        // { id: 7, userId: 8, firstName: "נאסר", lastName: "בן סעיד", nickName: "מכנים אותי ישראל", imgUrl: "images111.jpg", phone: "057-6543212" },
+        // { id: 8, userId: 9, firstName: "מחמוד", lastName: "בן סעיד", nickName: "מכנים אותי יעקב", imgUrl: "imgs222.jpg", phone: "057-6543212" },
     ];
 
     getWorkers(term?: string): Observable<Worker[]> {
@@ -25,5 +25,9 @@ export class WorkersManagerService {
             else
                 observer.next(this.workers);
         })
+    }
+
+    setWorker(worker: Worker) {
+        this.workers.push(worker);
     }
 }

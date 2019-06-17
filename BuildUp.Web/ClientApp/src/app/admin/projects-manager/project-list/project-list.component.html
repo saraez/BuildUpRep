@@ -1,0 +1,5 @@
+<p-dataView #dv [value]="projects" [paginator]="true" [rows]="10">
+    <ng-template let-project pTemplate="gridItem">
+      {{project.name}}
+    </ng-template>
+  </p-dataView>

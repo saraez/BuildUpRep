@@ -1,0 +1,38 @@
+<form [formGroup]="workerForm" class="display-edit-form">
+  <div class="worker-header">
+    <div class="worker-img" *ngIf="worker.imgUrl" [style.backgroundImage]="'url(./assets/imgs/'+worker.imgUrl+')'"></div>
+    <div>
+      <mat-form-field>
+        <mat-label>שם פרטי</mat-label>
+        <input matInput formControlName="firstName" type="text" class="bold input-title">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>שם משפחה</mat-label>
+        <input matInput formControlName="lastName" type="text" class="bold input-title">
+      </mat-form-field>
+    </div>
+     <!-- <div class="form-row">
+          <input type="text" class="bold input-title" formControlName="nickName" />
+      </div>
+      <div class="form-row">
+          <input type="text" formControlName="phoneNumber" />
+      </div> -->
+  </div>
+  <div>
+      <mat-form-field>
+          <mat-label>כינוי</mat-label>
+          <input matInput formControlName="nickName" type="text">
+        </mat-form-field>
+  </div>
+  <div>
+    פרטים נוספים<br>
+    פרטים נוספים<br>
+    פרטים נוספים<br>
+    פרטים נוספים<br>
+    פרטים נוספים<br>
+  </div>
+  <div class="buttons-container">
+    <!-- <button class="btn btn-outline-primary">עריכה</button> -->
+    <button class="btn btn-primary" (click)="close()">סגירה</button>
+  </div>
+</form>

@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ViewChild, ViewContainerRef
 import { Worker } from "../../../shared/models/worker.model"
 import { WorkersManagerService } from '../workers-manager.service';
 import { Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from "rxjs/operators"
 
 @Component({
   selector: 'bld-worker-search',
@@ -13,9 +14,14 @@ export class WorkerSearchComponent implements OnInit {
 
   onFreeTextKeyUp(value: string) {
     this.workers = this._wms.getWorkers(value);
+    // .pipe(debounceTime(1000), distinctUntilChanged())
   }
 
   workers: Observable<Worker[]>;
+
+  onUpdateWorker(worker: Worker) {
+    this._wms.setWorker(worker);
+  }
 
 
   constructor(private _wms: WorkersManagerService) { }

@@ -1,5 +1,9 @@
 <p-dataView #dv [value]="workers" [paginator]="true" [rows]="10" filterBy="firstName,lastName">
   <p-header>
+    <button class="btn btn-primary" (click)="openDialog()">
+      <i class="far fa-plus-square"></i>
+      הוספת פועל חדש
+    </button>
     <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
   </p-header>
   <ng-template let-worker pTemplate="gridItem">

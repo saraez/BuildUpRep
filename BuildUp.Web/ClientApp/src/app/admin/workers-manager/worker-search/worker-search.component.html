@@ -1,4 +1,4 @@
 <div class="container">
   <bld-worker-search-form (freeTextKeyUp)="onFreeTextKeyUp($event)"></bld-worker-search-form>
-  <bld-worker-list [workers]="workers | async"></bld-worker-list>
+  <bld-worker-list [workers]="workers | async" (updateWorker)="onUpdateWorker($event)"></bld-worker-list>
 </div>

@@ -18,8 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule.forRoot([
       { path: '', pathMatch: 'full', redirectTo: "login" },
       { path: 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
-      { path: "admin", loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
-      { path: "**", redirectTo: "login" }
+      { path: "admin", loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) }
+      // { path: "**", redirectTo: "login" }s
     ])
   ],
   providers: [],

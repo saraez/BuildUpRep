@@ -14,6 +14,16 @@
     grid-gap: 0.5em;
 }
 
+.ui-dataview-layout-options.ui-selectbutton.ui-buttonset {
+    // direction: $bld-direction-opposite;
+}
+
+.ui-dataview-header.ui-widget-header.ui-corner-top p-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 // ==================================================================
 
 .ui-dialog {
@@ -37,6 +47,10 @@
 .ui-dialog .ui-dialog-titlebar-icon {
     float: $bld-align-opposite;
     margin-left: 0 !important;
+
+    .pi.pi-times {
+        font-size: 2em;
+    } 
 }
 
 // ==================================================================
