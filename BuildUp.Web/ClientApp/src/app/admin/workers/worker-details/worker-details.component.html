@@ -24,6 +24,7 @@
           <input matInput formControlName="nickName" type="text">
         </mat-form-field>
   </div>
+  {{worker.id}}
   <div>
     פרטים נוספים<br>
     פרטים נוספים<br>
@@ -32,7 +33,8 @@
     פרטים נוספים<br>
   </div>
   <div class="buttons-container">
-    <!-- <button class="btn btn-outline-primary">עריכה</button> -->
-    <button class="btn btn-primary" (click)="close()">סגירה</button>
+    <button class="btn btn-outline-primary" (click)="close()" *ngIf="workerForm.dirty">ביטול</button>
+    <button class="btn btn-primary" (click)="saveAndClose()" *ngIf="workerForm.dirty">שמירה וסגירה</button>
+    <button class="btn btn-primary" (click)="close()" *ngIf="!workerForm.dirty">סגירה</button>
   </div>
 </form>

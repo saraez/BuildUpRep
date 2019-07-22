@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
-import { Worker } from "../../../shared/models/worker.model"
+import { Worker } from "../../../models/workers/worker.model"
 import { DialogService } from 'primeng/api';
 import { WorkerDetailsComponent } from '../worker-details/worker-details.component';
 
@@ -17,20 +17,29 @@ export class WorkerListComponent implements OnInit {
   workers: Worker[];
 
   @Output()
+  addWorker: EventEmitter<Worker> = new EventEmitter();
+
+  @Output()
   updateWorker: EventEmitter<Worker> = new EventEmitter();
 
-  display: boolean = false;
-
   openDialog(worker?: Worker) {
-    if(!worker) worker = new Worker();
+    let isNew: boolean = false;
+    if (!worker) {
+      worker = new Worker();
+      isNew = true;
+    }
     const ref = this.dialogService.open(WorkerDetailsComponent, {
       data: worker,
-      header: worker.firstName + " " + worker.lastName,
+      header: isNew ? "הוספת פועל חדש" : worker.firstName + " " + worker.lastName,
     });
 
     ref.onClose.subscribe((worker: Worker) => {
-      if (worker) {
+      if (!worker) return;
+      if (worker.id > 0) {
         this.updateWorker.emit(worker);
+      }
+      else {
+        this.addWorker.emit(worker);
       }
     });
   }

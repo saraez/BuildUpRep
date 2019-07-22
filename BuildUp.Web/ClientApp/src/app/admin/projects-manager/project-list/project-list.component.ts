@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { Project } from 'src/app/shared/models/project.model';
+import { Project } from '../../../models/project.model';
 
 @Component({
   selector: 'bld-project-list',

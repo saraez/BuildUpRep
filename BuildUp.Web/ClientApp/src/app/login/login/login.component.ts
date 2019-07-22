@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from './login.service';
-import { MemberType } from 'src/app/shared/models/member-type.enum';
+import { MemberType } from '../../models/member-type.enum';
 
 @Component({
   selector: 'bld-login',

@@ -5,13 +5,12 @@
 .ui-dataview-grid .ui-g {
     @include list-design;
     grid-template-columns: repeat(4, 1fr);
-    padding: 1em;
-    
+    padding: 1em;    
 }
 .ui-dataview-list .ui-g {
     @include list-design;
     grid-template-columns: 1fr;
-    grid-gap: 0.5em;
+    grid-gap: 0em;
 }
 
 .ui-dataview-layout-options.ui-selectbutton.ui-buttonset {

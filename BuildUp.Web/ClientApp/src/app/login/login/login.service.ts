@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { User } from "../../shared/models/user.model";
-import { MemberType } from "../../shared/models/member-type.enum";
+import { User } from "../../models/user.model";
+import { MemberType } from "../../models/member-type.enum";
 
 
 @Injectable({

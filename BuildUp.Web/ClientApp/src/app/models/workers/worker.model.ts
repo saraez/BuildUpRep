@@ -1,4 +1,4 @@
-import { MemberType } from "./member-type.enum";
+import { MemberType } from "../member-type.enum";
 
 export class Worker {
     id: number;
@@ -9,5 +9,9 @@ export class Worker {
     phone?: string;
     imgUrl?: string;
     licenseNumber?: string;
+
+    constructor() {
+        this.id = 0;
+    }
 
 }

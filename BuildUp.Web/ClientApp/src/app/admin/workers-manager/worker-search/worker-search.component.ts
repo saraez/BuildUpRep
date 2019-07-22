@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, ViewContainerRef, ElementRef } from '@angular/core';
-import { Worker } from "../../../shared/models/worker.model"
+import { Worker } from "../../../models/workers/worker.model"
 import { WorkersManagerService } from '../workers-manager.service';
 import { Observable } from 'rxjs';
 import { debounceTime, distinctUntilChanged } from "rxjs/operators"
@@ -20,7 +20,12 @@ export class WorkerSearchComponent implements OnInit {
   workers: Observable<Worker[]>;
 
   onUpdateWorker(worker: Worker) {
-    this._wms.setWorker(worker);
+    this._wms.updateWorker(worker);
+  }
+
+
+  onAddWorker(worker: Worker) {
+    this._wms.addWorker(worker);
   }
 
 

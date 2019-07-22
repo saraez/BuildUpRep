@@ -96,3 +96,25 @@ ul {
     }
 }
 
+.bld-btn-primary {
+    color: #fff;
+    background-color: $bld-primary-color;
+    border-color: #007bff;
+    &:hover {
+        color: #fff;
+        background-color: #0069d9;
+        border-color: #0062cc;
+    }
+}
+
+.bld-btn-success {
+    color: #fff;
+    background-color: var(--accent2Shade4);
+    border-color: var(--accent2Shade5);
+    &:hover {
+        color: #fff;
+        // background-color: #0069d9;
+        // border-color: #0062cc;
+    }
+}
+
