@@ -1,17 +1,17 @@
 import { MemberType } from "../member-type.enum";
+import { Person } from "../person.model";
 
-export class Worker {
-    id: number;
-    userId: number;
-    firstName: string;
-    lastName?: string;
+export class Worker extends Person {
     nickName?: string;
-    phone?: string;
     imgUrl?: string;
     licenseNumber?: string;
 
+    // fullName()  {
+    //     return this.nickName;
+    // }
+
     constructor() {
-        this.id = 0;
+        super();
     }
 
 }
